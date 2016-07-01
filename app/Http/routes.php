@@ -14,3 +14,9 @@
 Route::get('/', 'HomeController@index');
 
 Route::auth();
+
+Route::group(['namespace' => 'Company', 'as' => 'companies'], function()
+{
+    Route::get('settings', 'SettingController@index');
+    Route::post('settings/general', 'SettingController@updateGeneral');
+});

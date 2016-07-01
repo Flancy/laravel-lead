@@ -4,9 +4,9 @@
 
         <div class="panel-body">
             <ul class="list-group">
-                <a href="#" class="list-group-item active">Заявки <span class="badge">14</span></a>
+                <a href="/" class="list-group-item">Заявки <span class="badge">14</span></a>
 
-                <a href="#" class="list-group-item">Настройки</a>
+                <a href="/settings" class="list-group-item">Настройки</a>
             </ul>
         </div>
     </div>

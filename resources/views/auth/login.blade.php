@@ -7,7 +7,7 @@
             <div class="panel panel-info">
                 <div class="panel-heading">Войти</div>
                 <div class="panel-body">
-                    <form class="form-horizontal" role="form" method="POST" action="{{ url('/login') }}">
+                    <form class="form-horizontal" role="form" method="POST" action="/login">
                         {{ csrf_field() }}
 
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
@@ -54,7 +54,7 @@
                                     <i class="fa fa-btn fa-sign-in"></i> Login
                                 </button>
 
-                                <a class="btn btn-link" href="{{ url('/password/reset') }}">Забыли пароль?</a>
+                                <a class="btn btn-link" href="/password/reset">Забыли пароль?</a>
                             </div>
                         </div>
                     </form>

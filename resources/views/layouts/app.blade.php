@@ -28,7 +28,7 @@
                 </button>
 
                 <!-- Branding Image -->
-                <a class="navbar-brand" href="{{ url('/') }}">
+                <a class="navbar-brand" href="/">
                     Laravel
                 </a>
             </div>
@@ -37,7 +37,7 @@
                 <!-- Left Side Of Navbar -->
                 @if (!Auth::guest())
                     <ul class="nav navbar-nav">
-                        <li><a href="{{ url('/') }}">Главная</a></li>
+                        <li><a href="/">Главная</a></li>
                     </ul>
                 @endif
 
@@ -45,16 +45,16 @@
                 <ul class="nav navbar-nav navbar-right">
                     <!-- Authentication Links -->
                     @if (Auth::guest())
-                        <li><a href="{{ url('/login') }}">Войти</a></li>
-                        <li><a href="{{ url('/register') }}">Зарегистрироваться</a></li>
+                        <li><a href="/login">Войти</a></li>
+                        <li><a href="/register">Зарегистрироваться</a></li>
                     @else
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                {{ Auth::user()->name }} <span class="caret"></span>
+                                {{ Auth::user()->company->name }} <span class="caret"></span>
                             </a>
 
                             <ul class="dropdown-menu" role="menu">
-                                <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
+                                <li><a href="/logout"><i class="fa fa-btn fa-sign-out"></i>Выйти</a></li>
                             </ul>
                         </li>
                     @endif

@@ -11,7 +11,7 @@
                     Your Application's Landing Page.
 
                     <div class="btn-register text-center">
-                        <a href="{{ url('register') }}" class="btn btn-success">Зарегистрироваться</a>
+                        <a href="register" class="btn btn-success">Зарегистрироваться</a>
                     </div>
                 </div>
             </div>
