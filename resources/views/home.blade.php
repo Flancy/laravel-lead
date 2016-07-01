@@ -3,9 +3,10 @@
 @section('content')
 <div class="container">
     <div class="row">
-        <div class="col-md-10 col-md-offset-1">
+        @include('layouts.nav-company')
+        <div class="col-sm-9">
             <div class="panel panel-info">
-                <div class="panel-heading">Dashboard</div>
+                <div class="panel-heading">Заявки</div>
 
                 <div class="panel-body">
                     You are logged in!

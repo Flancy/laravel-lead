@@ -13,5 +13,7 @@ elixir(function(mix) {
         'app.js'
     ]);
 
-    mix.browserSync();
+    mix.browserSync({
+        proxy: 'laravel.lead.dev'
+    });
 });

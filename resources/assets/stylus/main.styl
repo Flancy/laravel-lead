@@ -3,6 +3,9 @@
 body
     font-family: "Roboto"
     font-weight: normal
+    font-size: 100%
+
+@import "components/font-size.styl"
 
 a,
 button,
@@ -10,13 +13,27 @@ input[type=submit],
 input[type=button]
     outline: none !important
 
+/**
+ * Навигации
+ */
+//Верхняя меню
 .navbar-default
-    .navbar-nav>li>a
+    .navbar-nav>li>a,
+    .navbar-nav>.open>a
         color: #000000
-        &:active
+        &:active,
             color: #999999
             box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.2);
+    .navbar-nav>.open>a
+        box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.2);
 
+//Боковая навигация - Компании
+.company-nav
+    .list-group
+        margin: 0
+
+
+//Landing page
 .welcome
     .btn-register
         a

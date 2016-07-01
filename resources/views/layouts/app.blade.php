@@ -37,7 +37,7 @@
                 <!-- Left Side Of Navbar -->
                 @if (!Auth::guest())
                     <ul class="nav navbar-nav">
-                        <li><a href="{{ url('/home') }}">Главная</a></li>
+                        <li><a href="{{ url('/') }}">Главная</a></li>
                     </ul>
                 @endif
 
