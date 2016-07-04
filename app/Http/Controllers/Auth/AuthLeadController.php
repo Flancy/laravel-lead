@@ -85,10 +85,10 @@ class AuthLeadController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => 'required|max:255',
+            'name' => 'required|max:48',
             'email' => 'required|email|max:255|unique:users',
-            'category' => 'required|max:255',
-            'lead_name' => 'required|max:255',
+            'category' => 'required|max:48',
+            'lead_name' => 'required|max:24',
             'price' => 'required|numeric',
             'date_actual' => 'required|date:y-m-d',
             'description' => 'required|min:24'

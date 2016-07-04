@@ -6,7 +6,8 @@ elixir(function(mix) {
         'bootstrap/css/bootstrap-select.min.css',
         'bootstrap/css/bootstrap-checkbox.min.css',
         'bootstrap/css/bootstrap-datetimepicker.min.css',
-        'main.css'
+        'main.css',
+        'media.css'
     ]);
 
     mix.scripts([
