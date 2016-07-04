@@ -10,8 +10,12 @@ body
 a,
 button,
 input[type=submit],
-input[type=button]
+input[type=button],
+select,
+.bootstrap-select .dropdown-toggle
     outline: none !important
+    &:focus
+        outline: none !important
 
 /**
  * Навигации
@@ -32,6 +36,12 @@ input[type=button]
 .company-nav
     .list-group
         margin: 0
+        .fa
+            width: 15px
+        .list-group
+            .list-group-item
+                border-radius: 0
+                padding-left: 30px
 
 
 //Landing page
@@ -39,6 +49,16 @@ input[type=button]
     .btn-register
         a
             display: inline-block
+
+//Регистрация зявок
+.lead-register
+    .dropdown-menu a span
+        width: 20px
+        text-align: center
+        &:before
+            display: inline
+    textarea
+        resize: vertical
 
 /**
  * Компания
@@ -64,8 +84,6 @@ input[type=button]
                 padding: 0 0 0 20px
                 vertical-align: middle
                 width: 75%
-                .control-label
-                    font-weight: 600
                 .btn-file
                     margin-left: 15px
                     display: inline-block

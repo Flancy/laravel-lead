@@ -32,4 +32,9 @@ class User extends Authenticatable implements HasRoleAndPermissionContract
     {
         return $this->hasOne('App\Company');
     }
+
+    public function lead()
+    {
+        return $this->hasOne('App\Lead');
+    }
 }

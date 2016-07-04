@@ -32,18 +32,18 @@ class SettingController extends Controller
     {
         $user = Auth::user();
 
-        if($request->hasFile('avatar')) {
+        if ($request->hasFile('avatar')) {
             $avatar = $request->file('avatar');
             $filename = time() . '.' . $avatar->getClientOriginalExtension();
 
-            if(!is_dir( public_path('uploads/' . $user->id) )) {
+            if (!is_dir( public_path('uploads/' . $user->id) )) {
                 File::makeDirectory($path=base_path('public/uploads/' . $user->id), $mode = 0755, $recursive = true, $force = false);
             }
 
             $makeImg = Image::make($avatar)->resize(300, 300)->save( public_path('uploads/' . $user->id . '/' . $filename ) );
 
-            if($makeImg) {
-                if(!$request->has('name')) {
+            if ($makeImg) {
+                if (!$request->has('name')) {
                     $user->company->avatar = $filename;
                     $user->company->save();
 

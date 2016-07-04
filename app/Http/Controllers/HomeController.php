@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Company;
+use App\Lead;
 use App\Http\Requests;
 use Illuminate\Http\Request;
 use Auth;
@@ -20,6 +21,8 @@ class HomeController extends Controller
             return view('welcome');
         }
 
-        return view('home');
+        $leads = Lead::all();
+
+        return view('home', ['leads' => $leads]);
     }
 }

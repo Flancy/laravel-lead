@@ -9,7 +9,20 @@
                 <div class="panel-heading">Заявки</div>
 
                 <div class="panel-body">
-                    You are logged in!
+                    @foreach($leads as $lead)
+                        <div class="row row-lead">
+                            <div class="wrap-lead">
+                                <div class="col-xs-3">
+                                    <img src="/uploads/default.jpg" class="img-responsive" alt="" />
+                                </div>
+                                <div class="col-xs-9">
+                                    <p>
+                                        Имя: {{ $lead->name }}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
                 </div>
             </div>
         </div>
