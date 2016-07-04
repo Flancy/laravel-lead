@@ -98,6 +98,7 @@ class AuthController extends Controller
 
         Company::create([
             'user_id' => $user->id,
+            'avatar' => "default.jpg",
             'name' => $data['name'],
         ]);
 

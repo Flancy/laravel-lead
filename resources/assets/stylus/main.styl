@@ -1,11 +1,11 @@
 // out: ../css/main.css, sourcemap: true, compress: true
 
+html
+    font-size: 100%
+
 body
     font-family: "Roboto"
     font-weight: normal
-    font-size: 100%
-
-@import "components/font-size.styl"
 
 a,
 button,
@@ -52,6 +52,29 @@ input[type=button]
             margin: -15px -15px 15px -15px
             border-bottom: 1px solid #cccccc
             font-weight: 600
-        .settings-form
-            .control-label
-                font-weight: 600
+        .form-wrap
+            font-size: 0
+            .company-img
+                display: inline-block
+                vertical-align: middle
+                padding: 15px 15px 15px 0px
+                width: 25%
+            .settings-form
+                display: inline-block
+                padding: 0 0 0 20px
+                vertical-align: middle
+                width: 75%
+                .control-label
+                    font-weight: 600
+                .btn-file
+                    margin-left: 15px
+                    display: inline-block
+                    vertical-align: middle
+                    input[type=file]
+                        display: none
+                #changeAvatar
+                    vertical-align: middle
+                    margin-left: 4px
+
+//Font-size
+@import "components/font-size.styl"
