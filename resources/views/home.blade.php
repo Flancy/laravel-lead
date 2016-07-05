@@ -23,7 +23,7 @@
                                         <div class="col-xs-5 col-md-4">
                                             <p class="lead-info-label"><i class="fa fa-archive" aria-hidden="true"></i>категория:</p>
                                             <p class="lead-info-label"><i class="fa fa-calendar-check-o" aria-hidden="true"></i>срок до:</p>
-                                            <p class="lead-info-label"><i class="fa fa-rub" aria-hidden="true"></i>стоимость:</p>
+                                            <p class="lead-info-label"><i class="fa fa-rub" aria-hidden="true"></i>бюджет:</p>
                                             <p class="lead-info-label"><i class="fa fa-user" aria-hidden="true"></i>ФИО заказчика:</p>
                                         </div>
                                         <div class="col-xs-7 col-md-8">

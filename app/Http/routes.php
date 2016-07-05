@@ -50,4 +50,6 @@ Route::group(['as' => 'leads'], function()
 {
     Route::get('lead-register', 'Auth\AuthLeadController@showRegistrationForm');
     Route::post('lead-register', 'Auth\AuthLeadController@register');
+
+    Route::resource('lead', 'Lead\HomeController');
 });

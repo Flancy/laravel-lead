@@ -124,5 +124,50 @@ select,
                     vertical-align: middle
                     margin-left: 4px
 
+/*
+ * Заявки
+ */
+
+//Главная страница
+.lead-page
+    .panel-lead
+        padding: 0 15px 0 15px
+        .lead-head
+            margin: 10px 0 20px 0
+        .lead-info-label
+            margin: 0
+            font-weight: bold
+        .lead-info-value
+            margin: 0 0 20px 0
+        .lead-info-general
+            .lead-info-label
+                display: inline-block
+            .lead-info-description
+                display: inline-block
+        .lead-info-img
+            padding: 0 0 0 15px
+            .lead-img
+                width: 100%
+    .panel-lead-bid
+        table
+            td,
+            th
+                border-color: #cccccc !important
+                vertical-align: middle
+                p
+                    margin: 0
+                    display: inline-block
+                a
+                    margin: 0
+                    display: inline-block
+                .btn-check-bid
+                    width: 100%
+                    &:hover
+                        margin: 0 0 1px 0
+                    &:active
+                        margin: 0 0 2px 0
+            tr:last-of-type
+                border-bottom: 1px solid #cccccc
+
 //Font-size
 @import "components/font-size.styl"

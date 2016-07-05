@@ -5,11 +5,21 @@
         <div class="panel-body">
             <ul class="list-group">
                 <a href="#leads" class="list-group-item" data-toggle="collapse">
-                    <i class="fa fa-caret-right" aria-hidden="true"></i></i>Заявки <span class="badge">{{ count($leads) }}</span>
+                    <i class="fa fa-caret-right" aria-hidden="true"></i></i>Заявки
+                    @if(isset($leads))
+                        <span class="badge">
+                            {{ count($leads) }}
+                        </span>
+                    @endif
                 </a>
                 <div class="list-group collapse" id="leads">
                     <a href="#all-leads" class="list-group-item">
-                        Все <span class="badge">{{ count($leads) }}</span>
+                        Все
+                        @if(isset($leads))
+                            <span class="badge">
+                                {{ count($leads) }}
+                            </span>
+                        @endif
                     </a>
                     <a href="#buy-leads" class="list-group-item">
                         Купленные <span class="badge">0<span>
