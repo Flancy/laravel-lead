@@ -12,6 +12,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
+use Bican\Roles\Models\Role;
 
 class AuthController extends Controller
 {
@@ -95,6 +96,10 @@ class AuthController extends Controller
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
         ]);
+
+        $companyRole = Role::where('slug', 'company')->first();
+
+        $user->attachRole($companyRole);
 
         Company::create([
             'user_id' => $user->id,

@@ -13,6 +13,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
+use Bican\Roles\Models\Role;
 
 class AuthLeadController extends Controller
 {
@@ -106,6 +107,10 @@ class AuthLeadController extends Controller
         $user = User::create([
             'email' => $data['email'],
         ]);
+
+        $leadRole = Role::where('slug', 'lead')->first();
+
+        $user->attachRole($leadRole);
 
         Lead::create([
             'user_id' => $user->id,

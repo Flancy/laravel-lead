@@ -1,6 +1,7 @@
 <?php
 
 use App\Category;
+use Bican\Roles\Models\Role;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,6 +17,8 @@ use App\Category;
 Route::get('/', 'HomeController@index');
 
 Route::auth();
+Route::get('lead-register', 'Auth\AuthLeadController@showRegistrationForm');
+Route::post('lead-register', 'Auth\AuthLeadController@register');
 
 Route::get('/add-slug', function() {
     Category::create([
@@ -40,16 +43,37 @@ Route::get('/add-slug', function() {
     ]);
 });
 
-Route::group(['namespace' => 'Company', 'as' => 'companies'], function()
-{
-    Route::get('settings', 'SettingController@index');
-    Route::post('settings/general', 'SettingController@updateGeneral');
+Route::get('/add-roles', function() {
+    Role::create([
+        'name' => 'Admin',
+        'slug' => 'admin',
+        'description' => 'Главный администратор',
+        'level' => 1,
+    ]);
+
+    Role::create([
+        'name' => 'Company',
+        'slug' => 'company',
+        'description' => 'Компания',
+        'level' => 3,
+    ]);
+    Role::create([
+        'name' => 'Lead',
+        'slug' => 'lead',
+        'description' => 'Заказчик',
+        'level' => 4,
+    ]);
 });
 
-Route::group(['as' => 'leads'], function()
+Route::group(['as' => 'companies', 'middleware' => 'role:company'], function()
 {
-    Route::get('lead-register', 'Auth\AuthLeadController@showRegistrationForm');
-    Route::post('lead-register', 'Auth\AuthLeadController@register');
+    Route::get('settings', 'Company\SettingController@index');
+    Route::post('settings/general', 'Company\SettingController@updateGeneral');
 
+    Route::get('lead/{id}', 'Lead\HomeController@show');
+});
+
+Route::group(['as' => 'leads', 'middleware' => 'role:lead'], function()
+{
     Route::resource('lead', 'Lead\HomeController');
 });
