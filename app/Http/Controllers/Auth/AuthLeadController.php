@@ -77,7 +77,7 @@ class AuthLeadController extends Controller
 
         $this->emailSend($request->all());
 
-        return view('lead.home', ['lead' => $request->user()->lead, 'user' => $request->user()]);
+        return view('lead.home', ['lead' => $request->user()->lead, 'user' => $request->user(), 'bids' => $request->user()->leadBid]);
     }
 
     /**

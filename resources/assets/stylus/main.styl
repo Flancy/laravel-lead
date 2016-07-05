@@ -143,9 +143,11 @@ select,
         .lead-info-value
             margin: 0 0 20px 0
         .lead-info-general
+            word-wrap: break-word
             .lead-info-label
                 display: inline-block
             .lead-info-description
+                width: 100%
                 display: inline-block
         .lead-info-img
             padding: 0 0 0 15px
@@ -171,6 +173,9 @@ select,
                         margin: 0 0 2px 0
             tr:last-of-type
                 border-bottom: 1px solid #cccccc
+    .form-bid
+        textarea
+            resize: vertical
 
 //Font-size
 @import "components/font-size.styl"

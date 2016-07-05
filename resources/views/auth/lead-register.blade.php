@@ -88,6 +88,7 @@
                                 @endif
                             </div>
                         </div>
+                        
                         <div class="form-group{{ $errors->has('description') ? ' has-error' : '' }}">
                             <label for="date" class="col-md-4 control-label">Подробное описание</label>
 

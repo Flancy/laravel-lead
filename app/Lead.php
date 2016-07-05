@@ -24,4 +24,9 @@ class Lead extends Model
     {
         return $this->belongsTo('App\Category');
     }
+
+    public function leadBid()
+    {
+        return $this->hasMany('App\LeadBid');
+    }
 }

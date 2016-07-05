@@ -89,58 +89,40 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>
-                                        <p>
-                                            Компания №1
-                                        </p>
-                                        <a href="#more">подробно <i class="fa fa-caret-down" aria-hidden="true"></i></a>
-                                    </td>
-                                    <td>
-                                        <p>
-                                            229 дней
-                                        </p>
-                                    </td>
-                                    <td>
-                                        <p>
-                                            999 999 руб.
-                                        </p>
-                                    </td>
-                                    <td>
-                                        <p>
-                                            <i class="fa fa-fire" aria-hidden="true"></i>
-                                        </p>
-                                    </td>
-                                    <td class="text-center">
-                                        <a href="#check-bid" class="btn btn-success btn-check-bid">Выбрать</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <p>
-                                            Компания №2
-                                        </p>
-                                        <a href="#more">подробно <i class="fa fa-caret-down" aria-hidden="true"></i></a>
-                                    </td>
-                                    <td>
-                                        <p>
-                                            229 дней
-                                        </p>
-                                    </td>
-                                    <td>
-                                        <p>
-                                            999 999 руб.
-                                        </p>
-                                    </td>
-                                    <td>
-                                        <p>
-                                            <i class="fa fa-fire" aria-hidden="true"></i>
-                                        </p>
-                                    </td>
-                                    <td class="text-center">
-                                        <a href="#check-bid" class="btn btn-success btn-check-bid">Выбрать</a>
-                                    </td>
-                                </tr>
+                                @foreach($bids as $bid)
+                                    <tr>
+                                        <td>
+                                            <p>
+                                                Компания №1
+                                            </p>
+                                            @role(!'admin|company')
+                                                <a href="#more">подробно <i class="fa fa-caret-down" aria-hidden="true"></i></a>
+                                            @endrole
+                                        </td>
+                                        <td>
+                                            <p>
+                                                {{ $bid->date_actual }}
+                                            </p>
+                                        </td>
+                                        <td>
+                                            <p>
+                                                {{ $bid->price }} руб.
+                                            </p>
+                                        </td>
+                                        <td>
+                                            <p>
+                                                @if (!empty($bid->unique_offer))
+                                                    <i class="fa fa-fire" aria-hidden="true"></i>
+                                                @endif
+                                            </p>
+                                        </td>
+                                        <td class="text-center">
+                                            @role(!'admin|company')
+                                                <a href="#check-bid" class="btn btn-success btn-check-bid">Выбрать</a>
+                                            @endrole
+                                        </td>
+                                    </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>
@@ -148,13 +130,103 @@
             </div>
 
             @role('admin|company')
-                <div class="panel panel-info">
-                    <div class="panel-heading">Оставить свое предложение</div>
+                @forelse ($bids as $bid)
+                    @if ($bid->company_id == Auth::user()->company->id)
+                        {{ $flag = '&nbsp;' }}
+                        @break
+                    @endif
+                    @empty
+                        {{ $flag = '' }}
+                @endforelse
 
-                    <div class="panel-body panel-lead-bid">
+                @if ($flag !== '&nbsp;')
+                    <div class="panel panel-info">
+                        <div class="panel-heading">Оставить свое предложение</div>
 
+                        <div class="panel-body panel-lead-bid">
+                            @if(session()->has('success'))
+                                <div class="alert alert-dismissible alert-success">
+                                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                                    <strong>
+                                        {!! session()->get('success') !!}
+                                    </strong>
+                                </div>
+                            @endif
+                            <form class="form-horizontal form-bid" role="form" method="POST" action="/lead/{{ $lead->id }}/add-bid">
+                                {{ csrf_field() }}
+
+                                <div class="form-group{{ $errors->has('date_actual') ? ' has-error' : '' }}">
+                                    <label for="date" class="col-md-4 control-label">Дата исполнения заявки: </label>
+
+                                    <div class="col-md-6">
+                                        <div class='input-group date' id='datetimepicker'>
+                                            <input type='text' id="date_actual" type="date" class="form-control" name="date_actual" value="{{ old('date_actual') }}" />
+                                            <span class="input-group-addon">
+                                                <i class="fa fa-calendar" aria-hidden="true"></i>
+                                            </span>
+                                        </div>
+
+                                        @if ($errors->has('date_actual'))
+                                            <span class="help-block">
+                                                <strong>{{ $errors->first('date_actual') }}</strong>
+                                            </span>
+                                        @endif
+                                    </div>
+                                </div>
+
+                                <div class="form-group{{ $errors->has('description') ? ' has-error' : '' }}">
+                                    <label for="date" class="col-md-4 control-label">Описание выполнения: </label>
+
+                                    <div class="col-md-6">
+                                        <textarea name="description" rows="8" class="form-control" value="{{ old('description') }}">{{ old('description') }}</textarea>
+
+                                        @if ($errors->has('description'))
+                                            <span class="help-block">
+                                                <strong>{{ $errors->first('description') }}</strong>
+                                            </span>
+                                        @endif
+                                    </div>
+                                </div>
+
+                                <div class="form-group{{ $errors->has('unique_offer') ? ' has-error' : '' }}">
+                                    <label for="date" class="col-md-4 control-label">Уникальное предложение: <i class="fa fa-fire" aria-hidden="true"></i></label>
+
+                                    <div class="col-md-6">
+                                        <textarea name="unique_offer" rows="8" class="form-control" value="{{ old('unique_offer') }}">{{ old('unique_offer') }}</textarea>
+
+                                        @if ($errors->has('unique_offer'))
+                                            <span class="help-block">
+                                                <strong>{{ $errors->first('unique_offer') }}</strong>
+                                            </span>
+                                        @endif
+                                    </div>
+                                </div>
+
+                                <div class="form-group{{ $errors->has('price') ? ' has-error' : '' }}">
+                                    <label for="category" class="col-md-4 control-label">Цена: </label>
+
+                                    <div class="col-md-6">
+                                        <input id="price" type="text" class="form-control amount" name="price" value="{{ old('price') }}"/>
+
+                                        @if ($errors->has('price'))
+                                            <span class="help-block">
+                                                <strong>{{ $errors->first('price') }}</strong>
+                                            </span>
+                                        @endif
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="col-md-6 col-md-offset-4">
+                                        <button type="submit" class="btn btn-success">
+                                            <i class="fa fa-bullhorn" aria-hidden="true"></i> Добавить предложение
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
                     </div>
-                </div>
+                @endif
             @endrole
         </div>
     </div>

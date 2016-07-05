@@ -2,6 +2,7 @@
 
 $(document).ready(function() {
     var url = window.location.pathname;
+    var regUrl = new RegExp("\/leads\/[0-9]+$", "ig");
 
     if (url == '/lead-register') {
         $('#datetimepicker').datetimepicker({
@@ -40,6 +41,16 @@ $(document).ready(function() {
         hrefLeads.attr('href', '/');
         hrefLeads.find('i').remove();
         hrefLeads.removeAttr('data-toggle');
+    } else if (!regUrl.test(url)) {
+        $('#datetimepicker').datetimepicker({
+            locale: 'ru',
+            format: 'Y-MM-DD'
+        });
+        
+        $('.amount').money_field({
+            width: 100,
+            symbol: '₽'
+        });
     }
 });
 
