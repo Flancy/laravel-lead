@@ -33,7 +33,15 @@
                                             <p class="lead-info-value">{{ $lead->name }}</p>
                                         </div>
                                         <div class="col-xs-12">
+                                        @if (Auth::user()->company->payLead()->where('lead_id',$lead->id)->where('buy', 1)->first())
                                             <a href="/lead/{{ $lead->id }}" class="btn btn-success btn-lead-page">Перейти на страницу заявки</a>
+                                        @else
+                                            <form action="/lead/{{ $lead->id }}/buy" method="post">
+                                                {!! csrf_field() !!}
+                                                <input type="hidden" name="id_lead" value="{{ $lead->id }}">
+                                                <button class="btn btn-success btn-lead-page" type="submit" name="button">Купить заявку</button>
+                                            </form>
+                                        @endif
                                         </div>
                                     </div>
                                 </div>

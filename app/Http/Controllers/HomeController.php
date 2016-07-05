@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Company;
 use App\Lead;
+use App\PayLead;
 use App\Http\Requests;
 use Illuminate\Http\Request;
 use Auth;
@@ -31,5 +32,18 @@ class HomeController extends Controller
                 return redirect()->action('Lead\HomeController@index');
             }
         }
+    }
+
+    public function buyLead($id)
+    {
+        $lead = Lead::findOrFail($id);
+
+        $payLead = PayLead::create([
+            'company_id' => Auth::user()->company->id,
+            'lead_id' => $lead->id,
+            'buy' => 1,
+        ]);
+
+        return redirect()->back();
     }
 }

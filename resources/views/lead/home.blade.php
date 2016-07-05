@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
             <div class="panel panel-info">
-                <div class="panel-heading">Ваша заявка</div>
+                <div class="panel-heading">Заявка</div>
 
                 <div class="panel-body panel-lead">
                     <h3 class="lead-head">
@@ -41,7 +41,7 @@
 
                         <div class="col-sm-3 col-xs-6">
                             <p class="lead-info-label">
-                                <i class="fa a-calendar-check-o" aria-hidden="true"></i> Срок до:
+                                <i class="fa fa-calendar-check-o" aria-hidden="true"></i> Срок до:
                             </p>
                             <p class="lead-info-value">
                                 {{ $lead->date_actual }}

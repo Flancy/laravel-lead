@@ -29,4 +29,9 @@ class Lead extends Model
     {
         return $this->hasMany('App\LeadBid');
     }
+
+    public function payLead()
+    {
+        return $this->hasMany('App\PayLead');
+    }
 }

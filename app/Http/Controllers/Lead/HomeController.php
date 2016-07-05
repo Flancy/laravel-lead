@@ -77,10 +77,16 @@ class HomeController extends Controller
      */
     public function show($id)
     {
-        $lead = Lead::findOrFail($id);
-        $leadBid = $lead->leadBid;
+        $user = Auth::user()->company->payLead()->where('lead_id', $id)->first();
 
-        return view('lead.home', ['lead' => $lead, 'bids' => $leadBid]);
+        if ($user !== null) {
+            $lead = Lead::findOrFail($id);
+            $leadBid = $lead->leadBid;
+
+            return view('lead.home', ['lead' => $lead, 'bids' => $leadBid]);
+        }
+
+        return abort(404);
     }
 
     /**

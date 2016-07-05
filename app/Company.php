@@ -14,4 +14,9 @@ class Company extends Model
     {
         return $this->belongsTo('App\User');
     }
+
+    public function payLead()
+    {
+        return $this->hasMany('App\PayLead');
+    }
 }
