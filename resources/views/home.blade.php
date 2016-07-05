@@ -10,7 +10,15 @@
 
                 <div class="panel-body panel-lead">
                     @foreach($leads as $lead)
-                        <div class="row row-lead">
+                        @if (Auth::user()->company->payLead()->where('lead_id',$lead->id)->where('buy', 1)->first())
+                            <div class="row row-lead all buy" 
+                                v-if:show="leads.buy|leads.all"
+                                transition="fade">
+                        @else
+                            <div class="row row-lead all" 
+                                v-if:show="leads.all"
+                                transition="fade">
+                        @endif
                             <div class="wrap-lead clearfix">
                                 <div class="col-sm-3 hidden-xs">
                                     <div class="row img-lead-wrap">

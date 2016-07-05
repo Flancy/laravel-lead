@@ -13,7 +13,7 @@
                     @endif
                 </a>
                 <div class="list-group collapse" id="leads">
-                    <a href="#all-leads" class="list-group-item">
+                    <a href="#all-leads" class="list-group-item" v-on:click.prevent="filterLeads('all')">
                         Все
                         @if(isset($leads))
                             <span class="badge">
@@ -21,8 +21,13 @@
                             </span>
                         @endif
                     </a>
-                    <a href="#buy-leads" class="list-group-item">
-                        Купленные <span class="badge">0<span>
+                    <a href="#buy-leads" class="list-group-item" v-on:click.prevent="filterLeads('buy')">
+                        Купленные 
+                        @if(isset($leads))
+                            <span class="badge">
+                                {{ count(Auth::user()->company->payLead->all()) }}
+                            </span>
+                        @endif
                     </a>
                 </div>
 

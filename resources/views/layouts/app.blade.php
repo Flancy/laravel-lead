@@ -14,7 +14,7 @@
     <!-- Styles -->
     <link rel="stylesheet" href="/css/all.css">
 </head>
-<body>
+<body id="app">
     <nav class="navbar navbar-default navbar-static-top">
         <div class="container">
             <div class="navbar-header">

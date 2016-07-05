@@ -1,1 +1,226 @@
-html{font-size:100%}body{font-family:"Roboto";font-weight:normal}a,button,input[type=submit],input[type=button],select,.bootstrap-select .dropdown-toggle{outline:none !important;}a:focus,button:focus,input[type=submit]:focus,input[type=button]:focus,select:focus,.bootstrap-select .dropdown-toggle:focus{outline:none !important}.fa{width:20px}.navbar-default .navbar-nav>li>a,.navbar-default .navbar-nav>.open>a{color:#000;}.navbar-default .navbar-nav>li>a:active,.navbar-default .navbar-nav>.open>a:active,.navbar-default .navbar-nav>li>a color: #999999,.navbar-default .navbar-nav>.open>a color: #999999{box-shadow:inset 0 0 10px rgba(0,0,0,0.2)}.navbar-default .navbar-nav>.open>a{box-shadow:inset 0 0 10px rgba(0,0,0,0.2)}.company-nav .list-group{margin:0;}.company-nav .list-group .fa{width:15px}.company-nav .list-group .list-group .list-group-item{border-radius:0;padding-left:30px}.welcome .btn-register a{display:inline-block}.lead-register .dropdown-menu a span{width:20px;text-align:center;}.lead-register .dropdown-menu a span:before{display:inline}.lead-register textarea{resize:vertical}.leads .panel-lead{padding:0 15px 15px 15px;}.leads .panel-lead .wrap-lead{border-bottom:1px solid #eee;}.leads .panel-lead .wrap-lead .img-lead-wrap{overflow:hidden;text-align:center;}.leads .panel-lead .wrap-lead .img-lead-wrap .img-lead{display:inline-block;max-width:100%;height:auto}.leads .panel-lead .wrap-lead .lead-info .lead-info-label{margin:0 0 10px 0;font-weight:bold;}.leads .panel-lead .wrap-lead .lead-info .lead-info-label i{width:20px}.leads .panel-lead .wrap-lead .lead-info .lead-info-head{margin:10px 0 10px 0}.leads .panel-lead .wrap-lead .lead-info .lead-info-value{margin:0 0 10px 0}.leads .panel-lead .wrap-lead .lead-info .btn-lead-page{margin:15px 0 10px 0;}.leads .panel-lead .wrap-lead .lead-info .btn-lead-page:hover{margin:15px 0 11px 0}.leads .panel-lead .wrap-lead .lead-info .btn-lead-page:active{margin:15px 0 12px 0}.settings .form-raw .form-head{padding:10px 15px;margin:-15px -15px 15px -15px;border-bottom:1px solid #ccc;font-weight:600}.settings .form-raw .form-wrap{font-size:0;}.settings .form-raw .form-wrap .company-img{display:inline-block;vertical-align:middle;padding:15px 15px 15px 0;width:25%}.settings .form-raw .form-wrap .settings-form{display:inline-block;padding:0 0 0 20px;vertical-align:middle;width:75%;}.settings .form-raw .form-wrap .settings-form .btn-file{margin-left:15px;display:inline-block;vertical-align:middle;}.settings .form-raw .form-wrap .settings-form .btn-file input[type=file]{display:none}.settings .form-raw .form-wrap .settings-form #changeAvatar{vertical-align:middle;margin-left:4px}.lead-page .panel-lead{padding:0 15px 0 15px;}.lead-page .panel-lead .lead-head{margin:10px 0 20px 0}.lead-page .panel-lead .lead-info-label{margin:0;font-weight:bold}.lead-page .panel-lead .lead-info-value{margin:0 0 20px 0}.lead-page .panel-lead .lead-info-general{word-wrap:break-word;}.lead-page .panel-lead .lead-info-general .lead-info-label{display:inline-block}.lead-page .panel-lead .lead-info-general .lead-info-description{width:100%;display:inline-block}.lead-page .panel-lead .lead-info-img{padding:0 0 0 15px;}.lead-page .panel-lead .lead-info-img .lead-img{width:100%}.lead-page .panel-lead-bid table td,.lead-page .panel-lead-bid table th{border-color:#ccc !important;vertical-align:middle;}.lead-page .panel-lead-bid table td p,.lead-page .panel-lead-bid table th p{margin:0;display:inline-block}.lead-page .panel-lead-bid table td a,.lead-page .panel-lead-bid table th a{margin:0;display:inline-block}.lead-page .panel-lead-bid table td .btn-check-bid,.lead-page .panel-lead-bid table th .btn-check-bid{width:100%;}.lead-page .panel-lead-bid table td .btn-check-bid:hover,.lead-page .panel-lead-bid table th .btn-check-bid:hover{margin:0 0 1px 0}.lead-page .panel-lead-bid table td .btn-check-bid:active,.lead-page .panel-lead-bid table th .btn-check-bid:active{margin:0 0 2px 0}.lead-page .panel-lead-bid table tr:last-of-type{border-bottom:1px solid #ccc}.lead-page .form-bid textarea{resize:vertical}.form-control,.lead-page .panel-lead .lead-info-label,.lead-page .panel-lead .lead-info-value{font-size:.875rem}.btn{font-size:.75rem}.btn-file,#changeAvatar{font-size:.625rem}.panel-heading,.navbar-default .navbar-nav>li>a{font-size:.86rem}.company-nav .list-group-item,.settings .form-raw .form-head,.form-horizontal .control-label{font-size:.8rem}/*# sourceMappingURL=main.css.map */
+html {
+  font-size: 100%;
+}
+body {
+  font-family: "Roboto";
+  font-weight: normal;
+}
+a,
+button,
+input[type=submit],
+input[type=button],
+select,
+.bootstrap-select .dropdown-toggle {
+  outline: none !important;
+}
+a:focus,
+button:focus,
+input[type=submit]:focus,
+input[type=button]:focus,
+select:focus,
+.bootstrap-select .dropdown-toggle:focus {
+  outline: none !important;
+}
+.fa {
+  width: 20px;
+}
+/**
+ * Навигации
+ */
+.navbar-default .navbar-nav>li>a,
+.navbar-default .navbar-nav>.open>a {
+  color: #000;
+}
+.navbar-default .navbar-nav>li>a:active,
+.navbar-default .navbar-nav>.open>a:active,
+.navbar-default .navbar-nav>li>a color: #999999,
+.navbar-default .navbar-nav>.open>a color: #999999 {
+  box-shadow: inset 0px 0px 10px rgba(0,0,0,0.2);
+}
+.navbar-default .navbar-nav>.open>a {
+  box-shadow: inset 0px 0px 10px rgba(0,0,0,0.2);
+}
+.company-nav .list-group {
+  margin: 0;
+}
+.company-nav .list-group .fa {
+  width: 15px;
+}
+.company-nav .list-group .list-group .list-group-item {
+  border-radius: 0;
+  padding-left: 30px;
+}
+.welcome .btn-register a {
+  display: inline-block;
+}
+.lead-register .dropdown-menu a span {
+  width: 20px;
+  text-align: center;
+}
+.lead-register .dropdown-menu a span:before {
+  display: inline;
+}
+.lead-register textarea {
+  resize: vertical;
+}
+/**
+ * Компания
+ */
+.leads .panel-lead {
+  padding: 0 15px 15px 15px;
+}
+.leads .panel-lead .wrap-lead {
+  border-bottom: 1px solid #eee;
+}
+.leads .panel-lead .wrap-lead .img-lead-wrap {
+  overflow: hidden;
+  text-align: center;
+}
+.leads .panel-lead .wrap-lead .img-lead-wrap .img-lead {
+  display: inline-block;
+  max-width: 100%;
+  height: auto;
+}
+.leads .panel-lead .wrap-lead .lead-info .lead-info-label {
+  margin: 0 0 10px 0;
+  font-weight: bold;
+}
+.leads .panel-lead .wrap-lead .lead-info .lead-info-label i {
+  width: 20px;
+}
+.leads .panel-lead .wrap-lead .lead-info .lead-info-head {
+  margin: 10px 0 10px 0;
+}
+.leads .panel-lead .wrap-lead .lead-info .lead-info-value {
+  margin: 0 0 10px 0;
+}
+.leads .panel-lead .wrap-lead .lead-info .btn-lead-page {
+  margin: 15px 0 10px 0;
+}
+.leads .panel-lead .wrap-lead .lead-info .btn-lead-page:hover {
+  margin: 15px 0 11px 0;
+}
+.leads .panel-lead .wrap-lead .lead-info .btn-lead-page:active {
+  margin: 15px 0 12px 0;
+}
+.settings .form-raw .form-head {
+  padding: 10px 15px;
+  margin: -15px -15px 15px -15px;
+  border-bottom: 1px solid #ccc;
+  font-weight: 600;
+}
+.settings .form-raw .form-wrap {
+  font-size: 0;
+}
+.settings .form-raw .form-wrap .company-img {
+  display: inline-block;
+  vertical-align: middle;
+  padding: 15px 15px 15px 0px;
+  width: 25%;
+}
+.settings .form-raw .form-wrap .settings-form {
+  display: inline-block;
+  padding: 0 0 0 20px;
+  vertical-align: middle;
+  width: 75%;
+}
+.settings .form-raw .form-wrap .settings-form .btn-file {
+  margin-left: 15px;
+  display: inline-block;
+  vertical-align: middle;
+}
+.settings .form-raw .form-wrap .settings-form .btn-file input[type=file] {
+  display: none;
+}
+.settings .form-raw .form-wrap .settings-form #changeAvatar {
+  vertical-align: middle;
+  margin-left: 4px;
+}
+/*
+ * Заявки
+ */
+.lead-page .panel-lead {
+  padding: 0 15px 0 15px;
+}
+.lead-page .panel-lead .lead-head {
+  margin: 10px 0 20px 0;
+}
+.lead-page .panel-lead .lead-info-label {
+  margin: 0;
+  font-weight: bold;
+}
+.lead-page .panel-lead .lead-info-value {
+  margin: 0 0 20px 0;
+}
+.lead-page .panel-lead .lead-info-general {
+  word-wrap: break-word;
+}
+.lead-page .panel-lead .lead-info-general .lead-info-label {
+  display: inline-block;
+}
+.lead-page .panel-lead .lead-info-general .lead-info-description {
+  width: 100%;
+  display: inline-block;
+}
+.lead-page .panel-lead .lead-info-img {
+  padding: 0 0 0 15px;
+}
+.lead-page .panel-lead .lead-info-img .lead-img {
+  width: 100%;
+}
+.lead-page .panel-lead-bid table td,
+.lead-page .panel-lead-bid table th {
+  border-color: #ccc !important;
+  vertical-align: middle;
+}
+.lead-page .panel-lead-bid table td p,
+.lead-page .panel-lead-bid table th p {
+  margin: 0;
+  display: inline-block;
+}
+.lead-page .panel-lead-bid table td a,
+.lead-page .panel-lead-bid table th a {
+  margin: 0;
+  display: inline-block;
+}
+.lead-page .panel-lead-bid table td .btn-check-bid,
+.lead-page .panel-lead-bid table th .btn-check-bid {
+  width: 100%;
+}
+.lead-page .panel-lead-bid table td .btn-check-bid:hover,
+.lead-page .panel-lead-bid table th .btn-check-bid:hover {
+  margin: 0 0 1px 0;
+}
+.lead-page .panel-lead-bid table td .btn-check-bid:active,
+.lead-page .panel-lead-bid table th .btn-check-bid:active {
+  margin: 0 0 2px 0;
+}
+.lead-page .panel-lead-bid table tr:last-of-type {
+  border-bottom: 1px solid #ccc;
+}
+.lead-page .form-bid textarea {
+  resize: vertical;
+}
+.form-control,
+.lead-page .panel-lead .lead-info-label,
+.lead-page .panel-lead .lead-info-value {
+  font-size: 0.875rem;
+}
+.btn {
+  font-size: 0.75rem;
+}
+.btn-file,
+#changeAvatar {
+  font-size: 0.625rem;
+}
+.panel-heading,
+.navbar-default .navbar-nav>li>a {
+  font-size: 0.86rem;
+}
+.company-nav .list-group-item,
+.settings .form-raw .form-head,
+.form-horizontal .control-label {
+  font-size: 0.8rem;
+}
+
+/*# sourceMappingURL=main.css.map */
