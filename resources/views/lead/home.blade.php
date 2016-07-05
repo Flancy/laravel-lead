@@ -41,7 +41,7 @@
 
                         <div class="col-sm-3 col-xs-6">
                             <p class="lead-info-label">
-                                <i class="fa a-calendar-check-o" aria-hidden="true"></i> Срок:
+                                <i class="fa a-calendar-check-o" aria-hidden="true"></i> Срок до:
                             </p>
                             <p class="lead-info-value">
                                 {{ $lead->date_actual }}
@@ -63,91 +63,91 @@
                 </div>
             </div>
 
-            @role('admin|lead')
-                <div class="panel panel-info">
-                    <div class="panel-heading">Предложения поставщиков</div>
+            <div class="panel panel-info">
+                <div class="panel-heading">Предложения поставщиков</div>
 
-                    <div class="panel-body panel-lead-bid">
-                        <div class="table-responsive">
-                            <table class="table table-condensed table-hover">
-                                <thead>
-                                    <tr>
-                                        <th>
-                                            Название компании <i class="fa fa-chevron-circle-down" aria-hidden="true"></i>
-                                        </th>
-                                        <th>
-                                            Сроки <i class="fa fa-chevron-circle-down" aria-hidden="true"></i>
-                                        </th>
-                                        <th>
-                                            Цена <i class="fa fa-chevron-circle-down" aria-hidden="true"></i>
-                                        </th>
-                                        <th>
-                                            <i class="fa fa-fire" aria-hidden="true"></i> <i class="fa fa-check-circle" aria-hidden="true"></i>
-                                        </th>
-                                        <th>
-                                            &nbsp;
-                                        </th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>
-                                            <p>
-                                                Компания №1
-                                            </p>
-                                            <a href="#more">подробно <i class="fa fa-caret-down" aria-hidden="true"></i></a>
-                                        </td>
-                                        <td>
-                                            <p>
-                                                229 дней
-                                            </p>
-                                        </td>
-                                        <td>
-                                            <p>
-                                                999 999 руб.
-                                            </p>
-                                        </td>
-                                        <td>
-                                            <p>
-                                                <i class="fa fa-fire" aria-hidden="true"></i>
-                                            </p>
-                                        </td>
-                                        <td class="text-center">
-                                            <a href="#check-bid" class="btn btn-success btn-check-bid">Выбрать</a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <p>
-                                                Компания №2
-                                            </p>
-                                            <a href="#more">подробно <i class="fa fa-caret-down" aria-hidden="true"></i></a>
-                                        </td>
-                                        <td>
-                                            <p>
-                                                229 дней
-                                            </p>
-                                        </td>
-                                        <td>
-                                            <p>
-                                                999 999 руб.
-                                            </p>
-                                        </td>
-                                        <td>
-                                            <p>
-                                                <i class="fa fa-fire" aria-hidden="true"></i>
-                                            </p>
-                                        </td>
-                                        <td class="text-center">
-                                            <a href="#check-bid" class="btn btn-success btn-check-bid">Выбрать</a>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
+                <div class="panel-body panel-lead-bid">
+                    <div class="table-responsive">
+                        <table class="table table-condensed table-hover">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        Название компании <i class="fa fa-chevron-circle-down" aria-hidden="true"></i>
+                                    </th>
+                                    <th>
+                                        Сроки <i class="fa fa-chevron-circle-down" aria-hidden="true"></i>
+                                    </th>
+                                    <th>
+                                        Цена <i class="fa fa-chevron-circle-down" aria-hidden="true"></i>
+                                    </th>
+                                    <th>
+                                        <i class="fa fa-fire" aria-hidden="true"></i> <i class="fa fa-check-circle" aria-hidden="true"></i>
+                                    </th>
+                                    <th>
+                                        &nbsp;
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <p>
+                                            Компания №1
+                                        </p>
+                                        <a href="#more">подробно <i class="fa fa-caret-down" aria-hidden="true"></i></a>
+                                    </td>
+                                    <td>
+                                        <p>
+                                            229 дней
+                                        </p>
+                                    </td>
+                                    <td>
+                                        <p>
+                                            999 999 руб.
+                                        </p>
+                                    </td>
+                                    <td>
+                                        <p>
+                                            <i class="fa fa-fire" aria-hidden="true"></i>
+                                        </p>
+                                    </td>
+                                    <td class="text-center">
+                                        <a href="#check-bid" class="btn btn-success btn-check-bid">Выбрать</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p>
+                                            Компания №2
+                                        </p>
+                                        <a href="#more">подробно <i class="fa fa-caret-down" aria-hidden="true"></i></a>
+                                    </td>
+                                    <td>
+                                        <p>
+                                            229 дней
+                                        </p>
+                                    </td>
+                                    <td>
+                                        <p>
+                                            999 999 руб.
+                                        </p>
+                                    </td>
+                                    <td>
+                                        <p>
+                                            <i class="fa fa-fire" aria-hidden="true"></i>
+                                        </p>
+                                    </td>
+                                    <td class="text-center">
+                                        <a href="#check-bid" class="btn btn-success btn-check-bid">Выбрать</a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
-            @else
+            </div>
+
+            @role('admin|company')
                 <div class="panel panel-info">
                     <div class="panel-heading">Оставить свое предложение</div>
 

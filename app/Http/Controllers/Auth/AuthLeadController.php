@@ -35,7 +35,8 @@ class AuthLeadController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/lead-register';
+    protected $redirectTo = '/lead';
+    protected $password;
 
     /**
      * Create a new authentication controller instance.
@@ -70,11 +71,13 @@ class AuthLeadController extends Controller
             );
         }
 
-        $this->create($request->all());
+        $this->password = str_random(8);
+
+        Auth::guard($this->getGuard())->login($this->create($request->all()));
 
         $this->emailSend($request->all());
 
-        return redirect($this->redirectPath());
+        return view('lead.home', ['lead' => $request->user()->lead, 'user' => $request->user()]);
     }
 
     /**
@@ -106,6 +109,7 @@ class AuthLeadController extends Controller
     {
         $user = User::create([
             'email' => $data['email'],
+            'password' => bcrypt($this->password),
         ]);
 
         $leadRole = Role::where('slug', 'lead')->first();
@@ -130,7 +134,7 @@ class AuthLeadController extends Controller
         $title = "Поздравляем с успешной регистрацией";
         $name = $data['name'];
         $email = $data['email'];
-        $content = $name." спасибо за регистрацию.";
+        $content = $name . " спасибо за регистрацию. <br> Ваш пароль: " . $this->password;
 
         return Mail::later(5, 'emails.register', ['title' => $title, 'content' => $content, 'email' => $email], function ($message) use ($email)
         {

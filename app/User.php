@@ -28,6 +28,11 @@ class User extends Authenticatable implements HasRoleAndPermissionContract
         'password', 'remember_token',
     ];
 
+    public function debit()
+    {
+        return $this->hasOne('App\Debit');
+    }
+
     public function company()
     {
         return $this->hasOne('App\Company');

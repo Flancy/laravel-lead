@@ -8,6 +8,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Auth;
 use App\Lead;
+use Bican\Roles\Models\Role;
 
 class HomeController extends Controller
 {
@@ -18,7 +19,10 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('lead.home');
+        $user = Auth::user();
+        $lead = $user->lead;
+
+        return view('lead.home', ['lead' => $lead]);
     }
 
     /**

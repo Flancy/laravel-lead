@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateLeadsTable extends Migration
+class CreateDebitsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,17 +12,11 @@ class CreateLeadsTable extends Migration
      */
     public function up()
     {
-        Schema::create('leads', function (Blueprint $table) {
+        Schema::create('debits', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id')->unsigned()->index();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->string('name');
-            $table->string('category');
-            $table->string('lead_name');
-            $table->string('price');
-            $table->text('description');
-            $table->date('date_actual');
-            $table->softDeletes();
+            $table->float('debit')->default(0);
             $table->timestamps();
         });
     }
@@ -34,6 +28,6 @@ class CreateLeadsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('leads');
+        Schema::drop('debits');
     }
 }

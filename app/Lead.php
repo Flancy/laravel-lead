@@ -3,12 +3,17 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Lead extends Model
 {
+    use SoftDeletes;
+
     protected $fillable = [
         'user_id', 'name', 'category', 'lead_name', 'price', 'description', 'date_actual'
     ];
+
+    protected $dates = ['deleted_at'];
 
     public function user()
     {

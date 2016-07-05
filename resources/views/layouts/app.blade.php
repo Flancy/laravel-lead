@@ -50,10 +50,17 @@
                     @else
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                {{ Auth::user()->company->name }} <span class="caret"></span>
+                                @role('company|admin')
+                                    {{ Auth::user()->company->name }} <span class="caret"></span>
+                                @else
+                                    {{ Auth::user()->lead->name }} <span class="caret"></span>
+                                @endrole
                             </a>
 
                             <ul class="dropdown-menu" role="menu">
+                                @role('company|admin')
+                                    <li><a href="#"><i class="fa fa-money" aria-hidden="true"></i>Баланс: {{ Auth::user()->debit->debit }} р.</a></li>
+                                @endrole
                                 <li><a href="/logout"><i class="fa fa-btn fa-sign-out"></i>Выйти</a></li>
                             </ul>
                         </li>

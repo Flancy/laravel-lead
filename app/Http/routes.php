@@ -69,11 +69,11 @@ Route::group(['as' => 'companies', 'middleware' => 'role:company'], function()
 {
     Route::get('settings', 'Company\SettingController@index');
     Route::post('settings/general', 'Company\SettingController@updateGeneral');
-
-    Route::get('lead/{id}', 'Lead\HomeController@show');
 });
 
-Route::group(['as' => 'leads', 'middleware' => 'role:lead'], function()
+Route::get('lead/{id}', ['uses' => 'Lead\HomeController@show', 'middleware' => 'role:lead,company']);
+
+Route::group(['as' => 'lead', 'middleware' => 'role:lead'], function()
 {
     Route::resource('lead', 'Lead\HomeController');
 });

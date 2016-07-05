@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\User;
 use App\Company;
+use App\Debit;
 use Validator;
 use Auth;
 use Mail;
@@ -105,6 +106,10 @@ class AuthController extends Controller
             'user_id' => $user->id,
             'avatar' => "default.jpg",
             'name' => $data['name'],
+        ]);
+
+        Debit::create([
+            'user_id' => $user->id,
         ]);
 
         return $user;
