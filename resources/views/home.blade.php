@@ -4,7 +4,7 @@
 <div class="container leads">
     <div class="row">
         @include('layouts.nav-company')
-        <div class="col-sm-9">
+        <div class="col-sm-8 col-md-9">
             <div class="panel panel-info">
                 <div class="panel-heading">Заявки</div>
 
@@ -13,19 +13,19 @@
                         @if (Auth::user()->company->payLead()->where('lead_id',$lead->id)->where('buy', 1)->first())
                             <div class="row row-lead all buy" 
                                 v-if:show="leads.buy|leads.all"
-                                transition="fade">
+                                transition="expand">
                         @else
                             <div class="row row-lead all" 
                                 v-if:show="leads.all"
-                                transition="fade">
+                                transition="expand">
                         @endif
                             <div class="wrap-lead clearfix">
-                                <div class="col-sm-3 hidden-xs">
+                                <div class="col-md-3 hidden-xs hidden-sm">
                                     <div class="row img-lead-wrap">
                                         <img src="/img/default_lead.jpg" class="img-lead" alt="" />
                                     </div>
                                 </div>
-                                <div class="col-xs-12 col-sm-9">
+                                <div class="col-xs-12 col-md-9">
                                     <div class="row lead-info">
                                         <h4 class="lead-info-head col-xs-12">{{ $lead->lead_name }}</h4>
                                         <div class="col-xs-5 col-md-4">

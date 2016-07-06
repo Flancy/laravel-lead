@@ -8,13 +8,16 @@
 
 }
 @media (max-width : 767px){
+    /*
+     * Кнопки
+     */
     .btn {
         font-size: 0.625rem;
     }
     /*
      * Заявки на странице компании, Страница заявки
      */
-     .leads .panel-lead .wrap-lead .lead-head,
+    .leads .panel-lead .wrap-lead .lead-head,
     .lead-page .panel-lead .lead-head {
         font-size: 1.25rem;
     }
@@ -60,8 +63,11 @@
 /*
  * Mobile first
  */
-@media (min-width : 992px){
+@media (min-width : 1200px){
 
+}
+@media (min-width : 992px){
+    
 }
 @media (min-width : 768px){
 

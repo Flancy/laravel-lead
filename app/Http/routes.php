@@ -22,6 +22,9 @@ Route::group(['as' => 'companies', 'middleware' => 'role:company'], function()
     Route::get('settings', 'Company\SettingController@index');
     Route::post('settings/general', 'Company\SettingController@updateGeneral');
 
+    Route::get('debit', 'Company\DebitController@index');
+    Route::post('debit', 'Company\DebitController@addMoney');
+
     Route::get('lead/{id}', 'Lead\HomeController@show');
     Route::post('lead/{id}/add-bid', 'Lead\HomeController@addBid');
     Route::post('lead/{id}/buy', 'HomeController@buyLead');

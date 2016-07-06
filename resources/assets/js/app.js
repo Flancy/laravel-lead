@@ -41,6 +41,13 @@ $(document).ready(function() {
         hrefLeads.attr('href', '/');
         hrefLeads.find('i').remove();
         hrefLeads.removeAttr('data-toggle');
+    } else if (url == '/debit') {
+        changeActiveLink(url);
+
+        $('.amount').money_field({
+            width: 100,
+            symbol: '₽'
+        });
     } else if (!regUrl.test(url)) {
         $('#datetimepicker').datetimepicker({
             locale: 'ru',

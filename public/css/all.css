@@ -131,7 +131,7 @@ select:focus,
   padding: 10px 15px;
   margin: -15px -15px 15px -15px;
   border-bottom: 1px solid #ccc;
-  font-weight: 600;
+  font-weight: bold;
 }
 .settings .form-raw .form-wrap {
   font-size: 0;
@@ -159,6 +159,16 @@ select:focus,
 .settings .form-raw .form-wrap .settings-form #changeAvatar {
   vertical-align: middle;
   margin-left: 4px;
+}
+.debit .debit-head p {
+  margin: 0;
+  font-weight: bold;
+}
+.debit .debit-body {
+  padding: 15px 0 0 0;
+}
+.debit .debit-form {
+  padding: 40px 0 0 0;
 }
 /*
  * Заявки
@@ -246,6 +256,9 @@ select:focus,
 .form-horizontal .control-label {
   font-size: 0.8rem;
 }
+.debit .debit-head p {
+  font-size: 1.375rem;
+}
 
 /*# sourceMappingURL=main.css.map */
 
@@ -259,13 +272,16 @@ select:focus,
 
 }
 @media (max-width : 767px){
+    /*
+     * Кнопки
+     */
     .btn {
         font-size: 0.625rem;
     }
     /*
      * Заявки на странице компании, Страница заявки
      */
-     .leads .panel-lead .wrap-lead .lead-head,
+    .leads .panel-lead .wrap-lead .lead-head,
     .lead-page .panel-lead .lead-head {
         font-size: 1.25rem;
     }
@@ -311,8 +327,11 @@ select:focus,
 /*
  * Mobile first
  */
-@media (min-width : 992px){
+@media (min-width : 1200px){
 
+}
+@media (min-width : 992px){
+    
 }
 @media (min-width : 768px){
 

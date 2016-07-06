@@ -57,7 +57,7 @@
                         </div>
 
                         <div class="form-group{{ $errors->has('lead_name') ? ' has-error' : '' }}">
-                            <label for="category" class="col-md-4 control-label">Название заявки</label>
+                            <label for="lead_name" class="col-md-4 control-label">Название заявки</label>
 
                             <div class="col-md-6">
                                 <input id="lead_name" type="text" class="form-control" name="lead_name" value="{{ old('lead_name') }}">
@@ -90,7 +90,7 @@
                         </div>
                         
                         <div class="form-group{{ $errors->has('description') ? ' has-error' : '' }}">
-                            <label for="date" class="col-md-4 control-label">Подробное описание</label>
+                            <label for="description" class="col-md-4 control-label">Подробное описание</label>
 
                             <div class="col-md-6">
                                 <textarea name="description" rows="8" class="form-control" value="{{ old('description') }}">{{ old('description') }}</textarea>
@@ -104,7 +104,7 @@
                         </div>
 
                         <div class="form-group{{ $errors->has('price') ? ' has-error' : '' }}">
-                            <label for="category" class="col-md-4 control-label">Цена заявки</label>
+                            <label for="price" class="col-md-4 control-label">Цена заявки</label>
 
                             <div class="col-md-6">
                                 <input id="price" type="text" class="form-control amount" name="price" value="{{ old('price') }}"/>

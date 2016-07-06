@@ -1,4 +1,4 @@
-<div class="col-sm-3 company-nav">
+<div class="col-sm-4 col-md-3 company-nav">
     <div class="panel panel-info">
         <div class="panel-heading"></div>
 
@@ -32,6 +32,7 @@
                 </div>
 
                 <a href="/settings" class="list-group-item">Настройки</a>
+                <a href="/debit" class="list-group-item">Счет</a>
             </ul>
         </div>
     </div>

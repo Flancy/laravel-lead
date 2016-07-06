@@ -4,7 +4,7 @@
 <div class="container settings">
     <div class="row">
         @include('layouts.nav-company')
-        <div class="col-sm-8">
+        <div class="col-sm-8 col-md-9">
             <div class="panel panel-info">
                 <div class="panel-heading">Настройки</div>
 
