@@ -1,9 +1,11 @@
 var elixir = require('laravel-elixir');
 
 require('laravel-elixir-stylus');
+require('laravel-elixir-vueify');
 
 elixir(function(mix) {
     mix.stylus('main.styl', 'resources/assets/css/main.css');
+    mix.browserify('vue.app.js', 'resources/assets/js/vue.js');
 
     mix.styles([
         'bootstrap/css/bootstrap.min.css',
@@ -22,7 +24,6 @@ elixir(function(mix) {
         'bootstrap/js/i18n/defaults-ru_RU.min.js',
         'bootstrap/js/bootstrap-money-field.js',
         'bootstrap/js/bootstrap-datetimepicker.min.js',
-        'vuejs/vue.min.js',
         'app.js',
         'vue.js'
     ]);

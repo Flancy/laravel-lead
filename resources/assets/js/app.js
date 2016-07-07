@@ -42,8 +42,13 @@ $(document).ready(function() {
         hrefLeads.find('i').remove();
         hrefLeads.removeAttr('data-toggle');
     } else if (url == '/debit') {
-        changeActiveLink(url);
+        var hrefLeads = $('.company-nav .list-group-item[href="#leads"]');
 
+        changeActiveLink(url);
+        hrefLeads.attr('href', '/');
+        hrefLeads.find('i').remove();
+        hrefLeads.removeAttr('data-toggle');
+        
         $('.amount').money_field({
             width: 100,
             symbol: '₽'

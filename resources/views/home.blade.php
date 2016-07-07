@@ -12,7 +12,7 @@
                     @foreach($leads as $lead)
                         @if (Auth::user()->company->payLead()->where('lead_id',$lead->id)->where('buy', 1)->first())
                             <div class="row row-lead all buy" 
-                                v-if:show="leads.buy|leads.all"
+                                v-if:show="leads.buy"
                                 transition="expand">
                         @else
                             <div class="row row-lead all" 

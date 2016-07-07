@@ -26,15 +26,34 @@ class DebitController extends Controller
         return view('company.debit', ['user' => Auth::user()]);
     }
 
+    public function getMoney(Request $request)
+    {
+        if (!$request->ajax()) {
+            return redirect('/');
+        }
+
+        return response()->json([
+            'debit' => Auth::user()->debit->debit
+        ]);
+    }
+
     public function addMoney(Request $request)
     {
         $this->validate($request, [
             'money' => 'required|numeric',
         ]);
 
-        $request->user()->debit->debit = $request->money;
+        $userMoney = $request->user()->debit->debit;
+
+        $request->user()->debit->debit = $userMoney + $request->money;
         $request->user()->debit->save();
 
-        return redirect('/debit')->with('success', 'Данные успешно сохранены!');
+        if (!$request->ajax()) {
+            return redirect('/debit')->with('success', 'Деньги успешно зачислены!');
+        }
+
+        return response()->json([
+            'success' => 'Данные успешно сохранены!'
+        ]);
     }
 }

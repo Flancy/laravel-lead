@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
+    <meta name="token" id="token" value="{{ csrf_token() }}">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -59,7 +60,7 @@
 
                             <ul class="dropdown-menu" role="menu">
                                 @role('company|admin')
-                                    <li><a href="#"><i class="fa fa-money" aria-hidden="true"></i>Баланс: {{ Auth::user()->debit->debit }} р.</a></li>
+                                    <li><a href="#"><i class="fa fa-money" aria-hidden="true"></i>Баланс: @{{ debit.userDebit }} р.</a></li>
                                 @endrole
                                 <li><a href="/logout"><i class="fa fa-btn fa-sign-out"></i>Выйти</a></li>
                             </ul>

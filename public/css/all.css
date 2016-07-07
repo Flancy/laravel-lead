@@ -235,6 +235,13 @@ select:focus,
 .lead-page .form-bid textarea {
   resize: vertical;
 }
+.success-transition {
+  transition: all 0.3s ease-in-out;
+}
+.success-enter,
+.success-leave {
+  opacity: 0;
+}
 .form-control,
 .lead-page .panel-lead .lead-info-label,
 .lead-page .panel-lead .lead-info-value {
