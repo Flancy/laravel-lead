@@ -50,7 +50,7 @@
                         <li><a href="/register">Зарегистрироваться</a></li>
                     @else
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 @role('company|admin')
                                     {{ Auth::user()->company->name }} <span class="caret"></span>
                                 @else
@@ -58,7 +58,7 @@
                                 @endrole
                             </a>
 
-                            <ul class="dropdown-menu" role="menu">
+                            <ul class="dropdown-menu">
                                 @role('company|admin')
                                     <li><a href="#"><i class="fa fa-money" aria-hidden="true"></i>Баланс: @{{ debit.userDebit }} р.</a></li>
                                 @endrole

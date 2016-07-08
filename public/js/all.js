@@ -12025,6 +12025,10 @@ $(document).ready(function() {
             style: 'btn-info',
             iconBase: 'fa'
         });
+    } else if (url == '/login') {
+        changeActiveLink(url, true);
+    } else if (url == '/register') {
+        changeActiveLink(url, true);
     } else if (url == '/') {
         url = window.location.hash;
 
@@ -12072,9 +12076,15 @@ $(document).ready(function() {
     }
 });
 
-function changeActiveLink(url) {
+function changeActiveLink(url, auth = false) {
     $('.company-nav .list-group-item').removeClass('active');
     $('.company-nav .list-group-item[href="'+url+'"]').addClass('active');
+
+    if (auth) {
+        $('.navbar-nav>li>a[href="'+url+'"]').addClass('active');
+    } else {
+        $('.navbar-nav>li>a').not('.dropdown-toggle').addClass('active');
+    }
 }
 
 function selectFile(element) {

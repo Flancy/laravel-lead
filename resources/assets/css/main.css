@@ -31,14 +31,14 @@ select:focus,
 .navbar-default .navbar-nav>.open>a {
   color: #000;
 }
-.navbar-default .navbar-nav>li>a:active,
-.navbar-default .navbar-nav>.open>a:active,
-.navbar-default .navbar-nav>li>a color: #999999,
-.navbar-default .navbar-nav>.open>a color: #999999 {
-  box-shadow: inset 0px 0px 10px rgba(0,0,0,0.2);
+.navbar-default .navbar-nav>li>a.active,
+.navbar-default .navbar-nav>.open>a.active {
+  color: #555;
+  background-color: #e7e7e7;
 }
 .navbar-default .navbar-nav>.open>a {
-  box-shadow: inset 0px 0px 10px rgba(0,0,0,0.2);
+  color: #555 !important;
+  background-color: #e7e7e7 !important;
 }
 .company-nav .list-group {
   margin: 0;
